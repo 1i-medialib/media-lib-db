@@ -40,9 +40,9 @@ INSERT INTO medialib.Album( id, name, artist_id, rating )
 CREATE TABLE IF NOT EXISTS medialib.Song
 (
   id SERIAL PRIMARY KEY,
-  title varchar(200) NOT NULL,
-  comment varchar(200),
-  song varchar(200),
+  title varchar(2000) NOT NULL,
+  comment varchar(30000),
+  song varchar(2000),
   year int,
   release_date date,
   track_number int,
@@ -52,8 +52,10 @@ CREATE TABLE IF NOT EXISTS medialib.Song
   duration int,
   disk_number int,
   score int,
+  lyrics varchar(30000),
   youtube_id varchar(500),
-  filename varchar(500) NOT NULL,
+  youtube_like_status varchar(20),
+  filename varchar(500),
   artist_id int NOT NULL REFERENCES medialib.artist(id),
   album_id int REFERENCES medialib.album(id),
   media_type_id int4 NOT NULL REFERENCES medialib.media_type(id)
