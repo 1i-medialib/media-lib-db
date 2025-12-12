@@ -8,9 +8,9 @@ echo "Backing up db to file: ${BACKUP_FILE}"
 docker exec -t medialibdb pg_dumpall -c -U postgres > ${BACKUP_FOLDER}/dump_`date +%Y%m%d%H%M%s`.sql
 
 cd $BACKUP_FOLDER
-ls -1l ${BACKUP_FILE}
+ls -1lh ${BACKUP_FILE}
 
 gzip ${BACKUP_FILE}
 
 echo "Backup Files:"
-ls -1l ${BACKUP_FOLDER}
+ls -1lh ${BACKUP_FOLDER}
